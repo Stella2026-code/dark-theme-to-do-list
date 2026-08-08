@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page">
+        <section class="card" aria-labelledby="app-title">
+            <header class="card_header">
+                <h1 id="app-title">Task Tracker</h1>
+                <p class="subtitle">Stay on top of your tasks.</p>
+            </header>
+
+            <form id="task-form" class="task-form" novalidate>
+                <label for="task-input" class="label">New Task</label>
+                <div class="input-row">
+                    <input
+                    id = "task-input"
+                    type="text"
+                    name="task"
+                    placeholder="e.g., Read chapter 3"
+                    autocomplete="off">
+                    <button type="submit" class="btn btn--primary">Add</button>
+                </div>
+                <p id="validation-message" class="validation" role="status"></p>
+            </form>
+            <div class="filters" role="tablist" aria-label="Task filters">
+                <button class="filter filter-is-active" data-filter="all" role ="tab">
+                    All
+                </button>
+                <button class="filter" data-filter="active" role="tab">Active</button>
+                <button class="filter" data-filter="completed" role="tab">Completed</button>
+            </div>
+            <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+            <p id="empty-state" class="empty-state">
+                No tasks yet. Add one above to get started.
+            </p>
+
+            <footer class="card_footer">
+                <div class="counts">
+                    <span id="total-count">0</span>total
+                    <span class="divider">•</span>
+                    <span id="active-count">0</span>remaining
+                </div>
+                <button id="clear-completed" class="btn btn--ghost">
+                    clear-completed
+                </button>
+            </footer>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
